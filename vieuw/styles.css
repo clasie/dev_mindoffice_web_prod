@@ -1,0 +1,206 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 0;
+    font-size: <?php echo $hidden_body_font_size?>px;
+}   
+form {
+    max-width: 600px;
+    margin: auto;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+label, select, input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    color:  #021f4a;
+    /*border-radius: 5px;*/
+}
+.remarqueSurUneQuestion{
+    display: block;
+    width: auto;
+    margin-bottom: 15px;
+    color:  #021f4a
+}
+.label_select_input {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+}        
+input[type="submit"] {
+    width: auto;
+    padding: 12px 15px;
+    margin-top: 24px;
+}
+.readonly-content {
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 16px;
+    white-space: pre-wrap; /* Conserve les retours à la ligne */
+    word-wrap: break-word; /* Coupe les longs mots si nécessaire */
+    color: #021f4a;
+    box-shadow: 1px 5px 14px <?php echo isset($tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code']) ? $tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code'] : ";"; ?>
+}
+.readonly-content_desc_questionnaire {
+    padding: 10px;
+    background-color: #eee;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    white-space: pre-wrap; /* Conserve les retours à la ligne */
+    word-wrap: break-word; /* Coupe les longs mots si nécessaire */
+    color: #021f4a;
+    box-shadow: 1px 5px 14px #021f4a7a;
+}        
+h2 {
+    color: #021f4a;
+}
+.select {
+    font-size: <?echo $hidden_body_font_size?>px;
+}
+.button-container {
+    display: flex; /* Activer Flexbox */
+    justify-content: center; /* Centrer horizontalement */
+    gap: 51px; /* Espacement entre les éléments */
+    margin-top: 2px;
+}
+.button-container span {
+    display: flex; /* Pour aligner le contenu (bouton) correctement */
+    align-items: center; /* Centrer verticalement */
+}
+.button-container button {
+    padding: 10px 20px;
+    font-size: 16px;
+}   
+textarea {
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+}
+textarea {
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 1px 5px 14px <?php echo isset($tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code']) ? $tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code'] : ";"; ?>
+    margin: 0px 0px 21px 0px;
+}       
+input[type="checkbox"]:not(:checked), 
+input[type="checkbox"]:checked {
+position: absolute;
+left: -9999%;
+}
+.check_box_cron_question
+{
+    width: 80%;
+}
+input[type="checkbox"] + label {
+    display: inline-block;
+    padding: 10px;
+    cursor: pointer;
+    /* border: 1px solid #9f7f7f; */
+    color: black;
+    /* background-color: white; */
+    margin-bottom: 10px;
+    width: 80%;
+    box-shadow: 1px 1px 29px <?php echo isset($tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code']) ? $tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code'] : ";"; ?>
+}
+.image_button {
+    box-shadow: 1px 5px 14px #021f4a7a;        
+}
+.size_image_select_question {
+    height: 20px;
+    width: 20px;
+    margin-bottom: 17px; 
+}
+.size_image_qrcode {
+    width: 250px;
+    height: 250px;
+    margin-bottom: 17px; 
+    box-shadow: 1px 1px 29px <?php echo isset($tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code']) ? $tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code'] : ";"; ?>
+}        
+.size_image_plus_loin {
+    height: 20px;
+    width: 20px;
+    margin-bottom: 17px; 
+    display: flex;
+    align-items: center;
+}        
+.size_image_logo_titre {
+    height: 38px;
+    width: 38px;
+    margin-bottom: 17px;
+    box-shadow: 1px 5px 14px #cf761b99;
+}        
+.size_image_user_icon {
+    height: 20px;
+    width: 20px;
+    margin: 0px 0px 15px 5px;
+    /*box-shadow: 1px 5px 14px #cf761b99;*/
+}        
+input[type="checkbox"]:checked + label {
+/*border: 1px solid white;*/
+color:rgb(15, 3, 68);
+background-color: rgb(199, 231, 18);
+box-shadow: 1px 5px 14px <?php echo isset($tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code']) ? $tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code'] : ";"; ?>
+}       
+#moncarre{
+    background: <?php echo isset($tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code']) ? $tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code'] : ";"; ?>
+    /* background: #ffb3ff; */
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    /* border: 2px solid #679403; */
+    margin: 0px 0px 15px 0px;
+    vertical-align: -38em;        
+}         
+#moncercle{
+    background: <?php echo isset($tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code']) ? $tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code'] : ";"; ?>
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    /* border: 2px solid #679403; */
+    margin: 0px 0px 14px 0px;         
+}             
+.moncercle_label{            
+    margin: 0px 0px 0px 4px;  
+    box-shadow: 1px 5px 14px <?php echo isset($tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code']) ? $tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code'] : ";"; ?>
+}    
+.moncercle_label_petit{
+    font-size : 10px; 
+} 
+.diff_levels {
+    display: flex; /* Activer Flexbox */
+    /*justify-content: center; */ /* Centrer horizontalement */
+    gap: 5px; /* Espacement entre les éléments */
+    margin-top: 20px;          
+    margin-bottom: 14px;
+}
+.diff_levels span {
+    display: flex; /* Pour aligner le contenu (bouton) correctement */
+    align-items: center; /* Centrer verticalement */
+}
+.config{
+    box-shadow: 1px 5px 14px #728b77;
+    padding: 10px;
+    max-width: 100%;
+    line-height: 1.5;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin: 0px 0px 21px 0px;
+}
+pre {
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+}
+.pas_de_questions_alert
+{
+    color: red;            
+}

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Question Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            font-size: 
+        }
+   
+        form {
+            max-width: 600px;
+            margin: auto;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        label, select, input {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+            color:  #021f4a;
+            /*border-radius: 5px;*/
+        }
+        .remarqueSurUneQuestion{
+            display: block;
+            width: auto;
+            margin-bottom: 15px;
+            color:  #021f4a
+        }
+        .label_select_input {
+            display: block;
+            width: 100%;
+            margin-bottom: 15px;
+        }        
+        input[type="submit"] {
+            width: auto;
+            padding: 12px 15px;
+            margin-top: 24px;
+        }
+        .readonly-content {
+            padding: 10px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            white-space: pre-wrap; /* Conserve les retours à la ligne */
+            word-wrap: break-word; /* Coupe les longs mots si nécessaire */
+            color: #021f4a;
+            box-shadow: 1px 5px 14px #021f4a;        }
+        .readonly-content_desc_questionnaire {
+            padding: 10px;
+            background-color: #eee;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            white-space: pre-wrap; /* Conserve les retours à la ligne */
+            word-wrap: break-word; /* Coupe les longs mots si nécessaire */
+            color: #021f4a;
+            box-shadow: 1px 5px 14px #021f4a7a;
+        }        
+        h2 {
+            color: #021f4a;
+        }
+
+        .select {
+            font-size: <br />
+<b>Notice</b>:  Undefined variable: hidden_body_font_size in <b>/home/cinqjom/www/accessibility/index.php</b> on line <b>1010</b><br />
+px;
+        }
+        .button-container {
+            display: flex; /* Activer Flexbox */
+            justify-content: center; /* Centrer horizontalement */
+            gap: 51px; /* Espacement entre les éléments */
+            margin-top: 2px;
+        }
+        .button-container span {
+            display: flex; /* Pour aligner le contenu (bouton) correctement */
+            align-items: center; /* Centrer verticalement */
+        }
+        .button-container button {
+            padding: 10px 20px;
+            font-size: 16px;
+        }   
+        textarea {
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+        textarea {
+            padding: 10px;
+            max-width: 100%;
+            line-height: 1.5;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 1px 5px 14px #021f4a;            margin: 0px 0px 21px 0px;
+        }       
+        input[type="checkbox"]:not(:checked), 
+        input[type="checkbox"]:checked {
+        position: absolute;
+        left: -9999%;
+        }
+
+        input[type="checkbox"] + label {
+            display: inline-block;
+            padding: 10px;
+            cursor: pointer;
+            /* border: 1px solid #9f7f7f; */
+            color: black;
+            /* background-color: white; */
+            margin-bottom: 10px;
+            width: 80%;
+            box-shadow: 1px 1px 1px #021f4a;        }
+        .image_button {
+            box-shadow: 1px 5px 14px #021f4a7a;        
+        }
+        .size_image_select_question {
+            height: 20px;
+            width: 20px;
+            margin-bottom: 17px; 
+        }
+        .size_image_user_icon {
+            height: 20px;
+            width: 20px;
+            margin-bottom: 17px; 
+            box-shadow: 1px 5px 14px #cf761b99;
+        }        
+        input[type="checkbox"]:checked + label {
+        /*border: 1px solid white;*/
+        color:rgb(15, 3, 68);
+        background-color: rgb(199, 231, 18);
+        box-shadow: 1px 5px 14px #021f4a;        }       
+        #moncarre{
+            background: #021f4a;            /* background: #ffb3ff; */
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            /* border: 2px solid #679403; */
+            margin: 0px 0px 15px 0px;
+            vertical-align: -38em;        
+        }         
+        #moncercle{
+            background: #021f4a;            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            /* border: 2px solid #679403; */
+            margin: 0px 0px 14px 0px;         
+        }             
+        .moncercle_label{            
+            margin: 0px 0px 0px 4px;  
+            box-shadow: 1px 5px 14px #021f4a;        }    
+        .moncercle_label_petit{
+            font-size : 10px; 
+        } 
+        .diff_levels {
+            display: flex; /* Activer Flexbox */
+            /*justify-content: center; */ /* Centrer horizontalement */
+            gap: 5px; /* Espacement entre les éléments */
+            margin-top: 20px;          
+            margin-bottom: 14px;
+        }
+        .diff_levels span {
+            display: flex; /* Pour aligner le contenu (bouton) correctement */
+            align-items: center; /* Centrer verticalement */
+        }
+        .config{
+            box-shadow: 1px 5px 14px #728b77;
+            padding: 10px;
+            max-width: 100%;
+            line-height: 1.5;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin: 0px 0px 21px 0px;
+        }
+        
+    </style>
+ 
+</head>
+<body>
+
+        <!--
+        <label>POST</label>
+        <pre>array(9) {
+  ["answer_id"]=>
+  string(155) "<br />
+<b>Notice</b>:  Trying to access array offset on value of type null in <b>/home/cinqjom/www/accessibility/index.php</b> on line <b>1007</b><br />
+"
+  ["compteur_posts"]=>
+  string(0) ""
+  ["custId"]=>
+  string(3) "259"
+  ["hidden_body_font_size"]=>
+  string(145) "<br />
+<b>Notice</b>:  Undefined variable: hidden_body_font_size in <b>/home/cinqjom/www/accessibility/index.php</b> on line <b>1010</b><br />
+"
+  ["global_message_txt"]=>
+  string(0) ""
+  ["questionnaire_id"]=>
+  string(1) "4"
+  ["filtre_niveau_difficulte"]=>
+  string(1) "1"
+  ["question_id"]=>
+  string(3) "259"
+  ["show_answer"]=>
+  string(20) "Save and Show Answer"
+}
+</pre>    
+        -->
+
+    <form method="POST">       
+
+        <div class="diff_levels">
+            <span >
+            <img class="size_image_user_icon"  src="https://www.cinqjoursdesilence.be/accessibility/img/user.png">
+            </span>        
+            <span >
+            <label> Albert Dupontel</label>
+            </span>                       
+        </div>  
+
+        <input type="hidden" id="answer_id" name="answer_id" value="257">
+        <input type="hidden" id="compteur_posts" name="compteur_posts" value="">
+        <input type="hidden" id="custId" name="custId" value="259">
+        <input type="hidden" id="hidden_body_font_size" name="hidden_body_font_size" value="<br />
+<b>Notice</b>:  Undefined variable: hidden_body_font_size in <b>/home/cinqjom/www/accessibility/index.php</b> on line <b>1010</b><br />
+">
+
+        <h2><img src="https://www.cinqjoursdesilence.be/accessibility/img/run.png"> Questionnaire dynamique configurable</h2>
+       
+       <!-- global notes -->
+       <div id="textPlaceGlobalNote" style="display:none;">                        
+                <textarea class="config"  id="global_message_txt" name="global_message_txt" rows="5" placeholder="Ecrivez ici vos notes globales. Ces données sont indépendantes de tout questionnaire." cols="33"></textarea>
+       </div>  
+
+        <!-- Selectionner un questionaire -->
+        <div class="diff_levels">
+            <span >
+               <img class="size_image_select_question"  alt="Lire votre remarque" src="https://www.cinqjoursdesilence.be/accessibility/img/questionnaire.png">
+            </span>             
+            <span >
+               <label for="questionnaire_id">Selectionner un questionnaire</label>
+            </span>                              
+        </div>           
+      
+        <select autocomplete="off" class="select"  id="questionnaire_id" name="questionnaire_id" required onchange="this.form.submit()">
+                            <option value="4"  selected >
+                    1- NL - Onregelmatig verbum                </option>
+                    </select>
+
+        <label>Déscription du questionnaire</label>
+        <div class="readonly-content_desc_questionnaire">Verbes irréguliers</div>              
+
+            <!-- Question -->
+            <div class="diff_levels">
+                <span >
+                    <div class="moncercle_label"  id="moncercle"></div>
+                </span>        
+                <span >
+                    <label>Question</label>
+                </span>                       
+            </div>  
+            
+            <!-- Liste des couleurs  et leur significations-->
+            <div class="diff_levels">
+                                    <span >
+            <div id="moncarre" style="background: #021f4a;"></div>
+                    </span>        
+                    <span >
+                        <label class="moncercle_label_petit" >Indéterminé</label>
+                    </span>    
+                                    <span >
+                        <div id="moncarre" style="background: #31a72f;"></div>
+                    </span>        
+                    <span >
+                        <label class="moncercle_label_petit" >Facile</label>
+                    </span>    
+                                    <span >
+                        <div id="moncarre" style="background: #FE9900;"></div>
+                    </span>        
+                    <span >
+                        <label class="moncercle_label_petit" >Moyen</label>
+                    </span>    
+                                    <span >
+                        <div id="moncarre" style="background: #98A113;"></div>
+                    </span>        
+                    <span >
+                        <label class="moncercle_label_petit" >Difficile</label>
+                    </span>    
+                                    <span >
+                        <div id="moncarre" style="background: #ff8080;"></div>
+                    </span>        
+                    <span >
+                        <label class="moncercle_label_petit" >Infaisable</label>
+                    </span>    
+                    
+            </div>    
+                            
+            <pre class="readonly-content">7- Comprendre</pre>
+            <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br> <br>
+            <div class="diff_levels">
+               <span >
+                  <div class="moncercle_label" id="moncercle"></div>
+               </span>        
+               <span >
+                  <label>Answer</label>
+               </span>                       
+            </div>  
+                
+                <!-- <label class="moncercle_label">Answer</label> -->
+                <!-- <pre class="readonly-content">&#123;id 5&#125; <br />
+<b>Warning</b>:  htmlspecialchars() expects parameter 1 to be string, array given in <b>/home/cinqjom/www/accessibility/index.php</b> on line <b>1204</b><br />
+</pre> -->
+                <pre class="readonly-content">begrijpen - begreep begrepen - heeft begrepen</pre>
+
+
+            <div id="textPlace" style="display:none;">                        
+                   
+                <textarea id="message_txt" placeholder="Ecrivez ici vos remarques, moyens mnémotechniques, etc... liés à cette question en particulier." name="message_txt" rows="5" cols="33"></textarea>
+
+                <input type="checkbox" id="message_cbx" name="message_cbx"  value="1">
+                <label for="message_cbx">Cliquer ici si vous voulez signaler ce message à l'administrateur</label>
+            </div>
+
+   </form>    
+</body>
+</html>

@@ -1,4 +1,5 @@
 <?php
+//test modif from hub.
 require "Connection_db.php";
 
 $debug = 0; 

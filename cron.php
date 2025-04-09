@@ -220,7 +220,7 @@ function sendMailTest($email_destinataire, $url_destination, $subject, $domaine_
    $html_content_milieu_desinscription  = $url_for_mail_desinscription;
 
    $html_content_fin_desinscription  = <<<MySQL_QUERY
-      ">Me désincrire ...</a>       
+      ">Me désincrire ...</a>  
       </body>
       </html>
    MySQL_QUERY;   

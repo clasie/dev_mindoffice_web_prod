@@ -9,7 +9,7 @@ TODO
    2.1.   Et commence par chercher les question dispo avec le niveau de diff le + grand.
    2.2 SiNon => la page va chercher l'id, fait + 1 et charge la page
 */
-require "Connection_db.php";
+require "Connection_db.php"; 
 
 $my_url_de_base = $url_de_base;
 $my_url_de_base_descinscription = $url_de_base_desinscription;

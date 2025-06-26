@@ -387,6 +387,16 @@ else
         <a href="index.php">Retourner au questionnaire</a>
         </p>  
         <input class="delete_btn" type="submit" value="Me désinscrire définitivement du site" name="desinscription">
+        <p>       
+            <a href="https://mindoffice.be/t.pdf" target="_blank" class="xbtn">
+                <strong>...</strong>
+            </a>
+        </p>
+        <p>
+            <a href="https://drive.google.com/drive/folders/1gkA_Nu5JOPcD7rLjqTc3XzsRydxUbI_n?usp=sharing" target="_blank" class="xbtn">
+                <strong>...</strong>
+            </a>        
+        </p>          
     </form> 
 </body>
 </html>

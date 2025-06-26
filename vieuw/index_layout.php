@@ -101,6 +101,7 @@ textarea {
     border: 1px solid #ccc;
     box-shadow: 1px 5px 14px <?php echo isset($tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code']) ? $tableauDesNiveausDeDificultes[$question['difficulty_level']]['color_code'] : ";"; ?>
     margin: 0px 0px 21px 0px;
+    width: 90%;
 }       
 input[type="checkbox"]:not(:checked), 
 input[type="checkbox"]:checked {
@@ -142,7 +143,21 @@ input[type="checkbox"] + label {
     margin-bottom: 17px; 
     display: flex;
     align-items: center;
-}        
+}      
+.size_image_question {
+    height: 30px;
+    width: 30px;
+    margin-bottom: 17px; 
+    display: flex;
+    align-items: center;
+}   
+.size_image_exclamation {
+    height: 25px;
+    width: 25px;
+    margin-bottom: 17px; 
+    display: flex;
+    align-items: center;
+}   
 .size_image_logo_titre {
     height: 38px;
     width: 38px;
@@ -205,6 +220,7 @@ box-shadow: 1px 5px 14px <?php echo isset($tableauDesNiveausDeDificultes[$questi
     border-radius: 5px;
     border: 1px solid #ccc;
     margin: 0px 0px 21px 0px;
+    width: 90%;
 }
 pre {
     white-space: pre-wrap;
@@ -593,6 +609,18 @@ $(document).ready(function() {
         <?php 
            } else { 
         ?>
+            <!-- Liste des couleurs  et leur significations-->
+            <div class="diff_levels">
+                <?php foreach ($tableauDesNiveausDeDificultes as $r):?>
+                    <span >
+                        <div id="moncarre" style="background: <?=$r['color_code']?>"></div>
+                    </span>        
+                    <span >
+                        <label class="moncercle_label_petit" ><?= htmlspecialchars($r['name_short']) ?></label>
+                    </span>    
+                <?php endforeach; ?>    
+            </div>    
+
             <!-- Question -->
             <div class="diff_levels">
                 <span >
@@ -607,20 +635,11 @@ $(document).ready(function() {
                 <span >
                     <label><?= $affichage_pagination ?> </label>
                 </span>                                
+                <span >
+                    <img class="size_image_question" src="./img/question.png">
+                </span>                   
             </div>  
-            
-            <!-- Liste des couleurs  et leur significations-->
-            <div class="diff_levels">
-                <?php foreach ($tableauDesNiveausDeDificultes as $r):?>
-                    <span >
-                        <div id="moncarre" style="background: <?=$r['color_code']?>"></div>
-                    </span>        
-                    <span >
-                        <label class="moncercle_label_petit" ><?= htmlspecialchars($r['name_short']) ?></label>
-                    </span>    
-                <?php endforeach; ?>    
-            </div>    
-                        
+                                    
             <!-- <div id="moncercle"><label class="moncercle_label" >Question</label></div> -->
             <pre class="readonly-content"><?=$question['question_text']?></pre>
             
@@ -656,7 +675,10 @@ $(document).ready(function() {
                     </span>        
                     <span >
                         <label>Answer</label>
-                    </span>                       
+                    </span>         
+                    <span >
+                        <img class="size_image_exclamation" src="./img/exclamation.png">
+                    </span>                                    
                 </div>  
                 
                 <!-- <label class="moncercle_label">Answer</label> -->
@@ -730,7 +752,7 @@ $(document).ready(function() {
                     <span >
                     <img class="size_image_select_question" alt="qrcode" id="qrcode" src="./img/qrcode.png">
                     </span>   
-                    <Label class="remarqueSurUneQuestion" >QR code </label>                     
+                    <Label class="remarqueSurUneQuestion" >QR code. Je partage cette question par GMS ...</label>                     
                 </div>
 
                 <!-- qrcode image -->

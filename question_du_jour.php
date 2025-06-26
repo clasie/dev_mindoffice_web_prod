@@ -950,6 +950,20 @@ function manageTimesAsked
             width: 20px;
             margin-bottom: 17px; 
         }
+        .size_image_question {
+            height: 30px;
+            width: 30px;
+            margin-bottom: 17px; 
+            display: flex;
+            align-items: center;
+        }   
+        .size_image_exclamation {
+            height: 25px;
+            width: 25px;
+            margin-bottom: 17px; 
+            display: flex;
+            align-items: center;
+        }          
         .size_image_logo_titre {
             height: 38px;
             width: 38px;
@@ -1149,25 +1163,8 @@ function manageTimesAsked
                 <input class="readonly-contentx" type="text" readonly value="261">
         </div> <!-- fin details config -->
 
-            <!-- Question -->
-            <div class="diff_levels">
-                <span >
-                    <div class="moncercle_label"  id="moncercle"></div>
-                </span>        
-                <span >
-                    <label>Question </label>
-                </span>     
-                <!-- bug 
-                <span >
-                    <label style="margin: 0px 0px 19px 3px;">&#8721;</label>
-                </span>                       
-                <span >
-                    <label><?= $affichage_pagination ?> </label>
-                </span>     
-                -->               
-            </div>  
-            
             <!-- Liste des couleurs  et leur significations-->
+            <!--
             <div class="diff_levels">
                 <?php foreach ($tableauDesNiveausDeDificultes as $r):?>
                     <span >
@@ -1177,7 +1174,28 @@ function manageTimesAsked
                         <label class="moncercle_label_petit" ><?= htmlspecialchars($r['name_short']) ?></label>
                     </span>    
                 <?php endforeach; ?>    
-            </div>      
+            </div>    
+            -->
+            <!-- Question -->
+            <div class="diff_levels">
+                <span >
+                    <div class="moncercle_label"  id="moncercle"></div>
+                </span>        
+                <span >
+                    <label>Question </label>
+                </span>     
+                <span >
+                    <img class="size_image_question" src="./img/question.png">
+                </span>                  
+                <!-- bug 
+                <span >
+                    <label style="margin: 0px 0px 19px 3px;">&#8721;</label>
+                </span>                       
+                <span >
+                    <label><?= $affichage_pagination ?> </label>
+                </span>     
+                -->               
+            </div>            
                             
             <pre class="readonly-content"><?=$question_text?></pre>
 
@@ -1188,7 +1206,10 @@ function manageTimesAsked
 
                     <span >
                         <label>Answer</label>
-                    </span>                       
+                    </span>      
+                    <span >
+                        <img class="size_image_exclamation" src="./img/exclamation.png">
+                    </span>                                       
                 </div>  
 
         <!-- voire réponse-->        

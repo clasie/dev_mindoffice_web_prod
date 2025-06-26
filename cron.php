@@ -244,7 +244,8 @@ function sendMailTest($email_destinataire, $url_destination, $subject, $domaine_
    $headers .= "Content-Type: text/html; charset=UTF-8\r\n";   
    //$headers .= "Content-type:text/html;charset=UTF-8" . "\r\b";
 
-   $headers .= "From: ".$domaine_name ." \r\nReply-To: info@".$domaine_name;
+   //$headers .= "From: ".$domaine_name ." \r\nReply-To: info@".$domaine_name;
+   $headers .= "From: MaQuestionDuJour@".$domaine_name." \r\nReply-To: info@".$domaine_name;
 
    echo $headers;
    

@@ -892,6 +892,7 @@ function manageTimesAsked
             word-wrap: break-word; /* Coupe les longs mots si nécessaire */
             color: #021f4a;
             box-shadow: 1px 5px 14px #021f4a7a;
+            font-family: monospace;
         }        
         h2 {
             color: #021f4a;
